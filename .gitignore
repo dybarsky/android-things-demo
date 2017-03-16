@@ -1,0 +1,6 @@
+.gradle/
+.idea/
+ussd.iml
+build/
+local.properties
+
