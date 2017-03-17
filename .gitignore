@@ -1,6 +1,6 @@
 .gradle/
 .idea/
-ussd.iml
+*.iml
 build/
 local.properties
 
