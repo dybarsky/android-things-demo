@@ -5,4 +5,6 @@ package com.tooploox.iot.demo;
  */
 
 public class DeviceDefaults {
+
+    public static final String PIN40 = "BCM21";
 }
