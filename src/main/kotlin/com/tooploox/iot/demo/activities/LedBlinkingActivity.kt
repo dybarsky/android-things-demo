@@ -1,15 +1,17 @@
-package com.tooploox.iot.demo
+package com.tooploox.iot.demo.activities
 
 import android.app.Activity
 import android.os.Bundle
 import android.os.Handler
 import com.google.android.things.pio.PeripheralManagerService
+import com.tooploox.iot.demo.Blinker
+import com.tooploox.iot.demo.PIN40
 import com.tooploox.iot.demo.drivers.LedController
 
 /**
  * Created by mdy on 3/22/17.
  */
-open class DemoActivity : Activity() {
+open class LedBlinkingActivity : Activity() {
 
     private val peripheralService = PeripheralManagerService()
 
