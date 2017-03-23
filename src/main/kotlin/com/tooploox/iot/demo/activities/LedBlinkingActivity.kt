@@ -1,9 +1,6 @@
 package com.tooploox.iot.demo.activities
 
-import android.app.Activity
-import android.os.Bundle
 import android.os.Handler
-import com.google.android.things.pio.PeripheralManagerService
 import com.tooploox.iot.demo.Blinker
 import com.tooploox.iot.demo.PIN40
 import com.tooploox.iot.demo.drivers.LedController
@@ -11,38 +8,21 @@ import com.tooploox.iot.demo.drivers.LedController
 /**
  * Created by mdy on 3/22/17.
  */
-open class LedBlinkingActivity : Activity() {
-
-    private val peripheralService = PeripheralManagerService()
+open class LedBlinkingActivity : IotActivity() {
 
     private var led: LedController? = null
     private var handler: Handler? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        initPeriphery()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        closePeriphery()
-    }
-
-    override fun onStart() {
-        super.onStart()
-        startBlinking()
-    }
-
-    private fun initPeriphery() {
+    override fun initPeriphery() {
         led = LedController(peripheralService, PIN40)
     }
 
-    private fun closePeriphery() {
+    override fun closePeriphery() {
         handler?.removeCallbacksAndMessages(null)
         led?.close()
     }
 
-    private fun startBlinking() {
+    override fun doAction() {
         val blinker = Blinker(led!!, null)
         handler = Handler(blinker)
         blinker.handler = this.handler
