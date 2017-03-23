@@ -1,6 +1,6 @@
 package com.tooploox.iot.demo.activities
 
-import android.os.Handler
+import android.os.Looper
 import com.tooploox.iot.demo.Blinker
 import com.tooploox.iot.demo.PIN40
 import com.tooploox.iot.demo.drivers.LedController
@@ -10,22 +10,18 @@ import com.tooploox.iot.demo.drivers.LedController
  */
 open class LedBlinkingActivity : IotActivity() {
 
-    private var led: LedController? = null
-    private var handler: Handler? = null
+    private lateinit var led: LedController
 
     override fun initPeriphery() {
         led = LedController(peripheralService, PIN40)
     }
 
     override fun closePeriphery() {
-        handler?.removeCallbacksAndMessages(null)
-        led?.close()
+        led.close()
     }
 
     override fun doAction() {
-        val blinker = Blinker(led!!, null)
-        handler = Handler(blinker)
-        blinker.handler = this.handler
+        val blinker = Blinker(led, Looper.getMainLooper())
         blinker.scheduleCode(Blinker.CODE_ON)
     }
 }

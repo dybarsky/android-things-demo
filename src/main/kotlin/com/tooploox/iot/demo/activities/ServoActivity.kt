@@ -8,18 +8,18 @@ import com.tooploox.iot.demo.drivers.ServoController
  */
 open class ServoActivity : IotActivity() {
 
-    private var servo: ServoController? = null
+    private lateinit var servo: ServoController
 
     override fun initPeriphery() {
         servo = ServoController(peripheralService, PWM0)
     }
 
     override fun closePeriphery() {
-        servo?.close()
+        servo.close()
     }
 
     override fun doAction() {
-        servo?.on()
-        servo?.setAngle(0)
+        servo.on()
+        servo.setAngle(0)
     }
 }
