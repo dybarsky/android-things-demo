@@ -4,10 +4,6 @@ import android.app.Activity
 import android.os.Bundle
 import com.google.android.things.pio.PeripheralManager
 
-/**
- * Maksym Dybarskyi | maksym.dybarskyi@tooploox.com
- * 23/03/2017 13:08
- */
 abstract class IotActivity : Activity() {
 
     protected val peripheralService: PeripheralManager by lazy {

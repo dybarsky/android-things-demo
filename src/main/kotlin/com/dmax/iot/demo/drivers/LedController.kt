@@ -4,9 +4,6 @@ import com.google.android.things.pio.Gpio
 import com.google.android.things.pio.PeripheralManager
 import java.io.IOException
 
-/**
- * Created by mdy on 3/22/17.
- */
 class LedController(peripheral: PeripheralManager, pin: String) {
 
     private val gpio: Gpio? = try {

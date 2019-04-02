@@ -5,9 +5,6 @@ import com.dmax.iot.demo.Blinker
 import com.dmax.iot.demo.PIN40
 import com.dmax.iot.demo.drivers.LedController
 
-/**
- * Created by mdy on 3/22/17.
- */
 open class LedBlinkingActivity : IotActivity() {
 
     private lateinit var led: LedController

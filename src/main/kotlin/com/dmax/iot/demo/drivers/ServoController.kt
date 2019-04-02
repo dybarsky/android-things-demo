@@ -2,10 +2,8 @@ package com.dmax.iot.demo.drivers
 
 import com.google.android.things.pio.PeripheralManager
 import com.google.android.things.pio.Pwm
+import java.io.IOException
 
-/**
- * Created by mdy on 3/22/17.
- */
 class ServoController(peripheral: PeripheralManager, pin: String) {
 
     companion object {
@@ -16,24 +14,38 @@ class ServoController(peripheral: PeripheralManager, pin: String) {
         private const val ONE_DEGREE_MS = (DUTY_CYCLE_MAX_MS - DUTY_CYCLE_MIN_MS) / 180
     }
 
-    private val pwm: Pwm = peripheral.openPwm(pin)
-
-    init {
-        pwm.setPwmFrequencyHz(FREQUENCY)
-        pwm.setPwmDutyCycle(0.0)
+    private val pwm: Pwm? = try {
+        peripheral.openPwm(pin)
+    } catch (_: IOException) {
+        null
     }
 
-    fun on() { pwm.setEnabled(true) }
+    init {
+        pwm?.apply {
+            setPwmFrequencyHz(FREQUENCY)
+            setPwmDutyCycle(0.0)
+        }
+    }
 
-    fun off() { pwm.setEnabled(false) }
+    fun on() {
+        pwm?.setEnabled(true)
+    }
 
-    fun close() { pwm.close() }
+    fun off() {
+        pwm?.setEnabled(false)
+    }
+
+    fun close() {
+        try {
+            pwm?.close()
+        } catch (_: IOException) {}
+    }
 
     fun setAngle(angle: Int) {
         if (angle !in 0..180) return
 
         val dutyCycleInMillis = DUTY_CYCLE_MIN_MS + angle * ONE_DEGREE_MS
         val dutyCycleInPercents = dutyCycleInMillis * 100 / PULSE_PERIOD_MS
-        pwm.setPwmDutyCycle(dutyCycleInPercents)
+        pwm?.setPwmDutyCycle(dutyCycleInPercents)
     }
 }
