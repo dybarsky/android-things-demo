@@ -1,7 +1,7 @@
-package com.tooploox.iot.demo.activities
+package com.dmax.iot.demo.activities
 
-import com.tooploox.iot.demo.PWM0
-import com.tooploox.iot.demo.drivers.ServoController
+import com.dmax.iot.demo.PWM0
+import com.dmax.iot.demo.drivers.ServoController
 
 /**
  * Created by mdy on 3/22/17.

@@ -1,9 +1,9 @@
-package com.tooploox.iot.demo.activities
+package com.dmax.iot.demo.activities
 
 import android.os.Looper
-import com.tooploox.iot.demo.Blinker
-import com.tooploox.iot.demo.PIN40
-import com.tooploox.iot.demo.drivers.LedController
+import com.dmax.iot.demo.Blinker
+import com.dmax.iot.demo.PIN40
+import com.dmax.iot.demo.drivers.LedController
 
 /**
  * Created by mdy on 3/22/17.

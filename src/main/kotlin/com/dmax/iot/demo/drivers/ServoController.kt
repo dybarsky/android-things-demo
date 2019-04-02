@@ -1,12 +1,12 @@
-package com.tooploox.iot.demo.drivers
+package com.dmax.iot.demo.drivers
 
-import com.google.android.things.pio.PeripheralManagerService
+import com.google.android.things.pio.PeripheralManager
 import com.google.android.things.pio.Pwm
 
 /**
  * Created by mdy on 3/22/17.
  */
-class ServoController(peripheral: PeripheralManagerService, pin: String) {
+class ServoController(peripheral: PeripheralManager, pin: String) {
 
     companion object {
         private const val FREQUENCY = 50.0

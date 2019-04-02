@@ -1,8 +1,8 @@
-package com.tooploox.iot.demo.activities
+package com.dmax.iot.demo.activities
 
 import android.app.Activity
 import android.os.Bundle
-import com.google.android.things.pio.PeripheralManagerService
+import com.google.android.things.pio.PeripheralManager
 
 /**
  * Maksym Dybarskyi | maksym.dybarskyi@tooploox.com
@@ -10,7 +10,9 @@ import com.google.android.things.pio.PeripheralManagerService
  */
 abstract class IotActivity : Activity() {
 
-    protected val peripheralService = PeripheralManagerService()
+    protected val peripheralService: PeripheralManager by lazy {
+        PeripheralManager.getInstance() ?: throw IllegalStateException("Can't obtain peripheral manager")
+    }
 
     abstract fun initPeriphery()
     abstract fun closePeriphery()

@@ -1,9 +1,9 @@
-package com.tooploox.iot.demo
+package com.dmax.iot.demo
 
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
-import com.tooploox.iot.demo.drivers.LedController
+import com.dmax.iot.demo.drivers.LedController
 
 class Blinker(
         private val ledController: LedController,

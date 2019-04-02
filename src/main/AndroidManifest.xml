@@ -1,15 +1,18 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tooploox.iot.demo">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.dmax.iot.demo">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@android:drawable/sym_def_app_icon"
-        android:label="@string/app_name">
+        android:label="@string/app_name"
+        tools:ignore="GoogleAppIndexingWarning"
+        >
 
         <uses-library android:name="com.google.android.things"/>
 
-        <activity android:name=".activities.ServoActivity">
+        <activity android:name="com.dmax.iot.demo.activities.LedBlinkingActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

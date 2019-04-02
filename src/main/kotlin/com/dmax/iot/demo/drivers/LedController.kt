@@ -1,12 +1,12 @@
-package com.tooploox.iot.demo.drivers
+package com.dmax.iot.demo.drivers
 
 import com.google.android.things.pio.Gpio
-import com.google.android.things.pio.PeripheralManagerService;
+import com.google.android.things.pio.PeripheralManager
 
 /**
  * Created by mdy on 3/22/17.
  */
-class LedController(peripheral: PeripheralManagerService, pin: String) {
+class LedController(peripheral: PeripheralManager, pin: String) {
 
     private val gpio: Gpio = peripheral.openGpio(pin)
 
