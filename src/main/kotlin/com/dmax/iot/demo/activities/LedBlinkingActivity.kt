@@ -10,7 +10,7 @@ open class LedBlinkingActivity : IotActivity() {
     private lateinit var led: LedController
 
     override fun initPeriphery() {
-        led = LedController(peripheralService, PIN40)
+        led = LedController(peripheral, PIN40)
     }
 
     override fun closePeriphery() {

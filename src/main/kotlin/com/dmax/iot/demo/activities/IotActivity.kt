@@ -6,7 +6,7 @@ import com.google.android.things.pio.PeripheralManager
 
 abstract class IotActivity : Activity() {
 
-    protected val peripheralService: PeripheralManager by lazy {
+    protected val peripheral: PeripheralManager by lazy {
         PeripheralManager.getInstance() ?: throw IllegalStateException("Can't obtain peripheral manager")
     }
 

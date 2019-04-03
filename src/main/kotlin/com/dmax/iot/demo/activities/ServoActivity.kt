@@ -8,7 +8,7 @@ open class ServoActivity : IotActivity() {
     private lateinit var servo: ServoController
 
     override fun initPeriphery() {
-        servo = ServoController(peripheralService, PWM0)
+        servo = ServoController(peripheral, PWM0)
     }
 
     override fun closePeriphery() {
