@@ -62,8 +62,8 @@ class PCA9685(val i2c: I2cDevice) {
 //            writeRegByte(LED0_OFF_L, low)
 
 
-            val low = 103
-            val high = 492
+            val low = 150
+            val high = 480
 
             val value = high
             val value2 = low
