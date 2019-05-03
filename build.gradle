@@ -4,8 +4,8 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.3.2'
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.21'
+        classpath 'com.android.tools.build:gradle:3.4.0'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.30'
     }
 }
 
@@ -35,5 +35,5 @@ repositories {
 
 dependencies {
     compileOnly 'com.google.android.things:androidthings:1.0'
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.21'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.30'
 }
