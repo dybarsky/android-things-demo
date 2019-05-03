@@ -16,8 +16,8 @@
         <uses-library android:name="com.google.android.things"/>
 
         <!--<activity android:name="com.dmax.iot.demo.activities.LedBlinkingActivity">-->
-        <!--<activity android:name="com.dmax.iot.demo.activities.ServoActivity">-->
-        <activity android:name="com.dmax.iot.demo.activities.I2cActivity">
+        <activity android:name="com.dmax.iot.demo.activities.ServoActivity">
+        <!--<activity android:name="com.dmax.iot.demo.activities.I2cActivity">-->
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

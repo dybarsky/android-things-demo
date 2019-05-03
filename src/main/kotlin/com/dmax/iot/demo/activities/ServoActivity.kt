@@ -17,6 +17,6 @@ open class ServoActivity : IotActivity() {
 
     override fun doAction() {
         servo.on()
-        servo.setAngle(180)
+        servo.setAngle(90)
     }
 }

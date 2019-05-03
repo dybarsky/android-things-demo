@@ -16,7 +16,8 @@ class ServoController(peripheral: PeripheralManager, pin: String) {
 
     private val pwm: Pwm? = try {
         peripheral.openPwm(pin)
-    } catch (_: IOException) {
+    } catch (e: IOException) {
+        e.printStackTrace()
         null
     }
 
