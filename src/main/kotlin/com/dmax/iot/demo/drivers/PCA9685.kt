@@ -17,6 +17,11 @@ private const val LED1_ON_H = 0x0b
 private const val LED1_OFF_L = 0x0c
 private const val LED1_OFF_H = 0x0d
 
+private const val LED2_ON_L = 0x0e
+private const val LED2_ON_H = 0x0f
+private const val LED2_OFF_L = 0x10
+private const val LED2_OFF_H = 0x11
+
 private const val PCA9685_25Mhz_TICKS = 25000000f
 
 class PCA9685(val i2c: I2cDevice) {

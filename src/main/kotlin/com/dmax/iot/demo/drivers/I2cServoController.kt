@@ -4,7 +4,7 @@ import com.google.android.things.pio.PeripheralManager
 import com.google.android.things.pio.Pwm
 import java.io.IOException
 
-class ServoController(peripheral: PeripheralManager, pin: String) {
+class I2cServoController(peripheral: PeripheralManager, pin: String) {
 
     companion object {
         private const val FREQUENCY = 50.0
